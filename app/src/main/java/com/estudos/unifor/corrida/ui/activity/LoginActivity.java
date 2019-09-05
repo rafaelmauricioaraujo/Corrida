@@ -1,8 +1,10 @@
-package com.estudos.unifor.corrida;
+package com.estudos.unifor.corrida.ui.activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+
+import com.estudos.unifor.corrida.R;
 
 public class LoginActivity extends AppCompatActivity {
 

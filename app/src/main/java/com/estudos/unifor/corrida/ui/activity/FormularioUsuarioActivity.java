@@ -12,5 +12,7 @@ public class FormularioUsuarioActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_formulario_usuario);
+
+        setTitle("Inscrever-se");
     }
 }

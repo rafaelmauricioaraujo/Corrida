@@ -11,6 +11,7 @@
         android:layout_width="match_parent"
         android:layout_margin="8dp"
         android:hint="Email"
+        android:autofillHints="no"
         android:inputType="textEmailAddress"
         android:layout_height="wrap_content"/>
 
@@ -27,6 +28,14 @@
         android:layout_width="match_parent"
         android:layout_margin="8dp"
         android:text="LOG IN"
+        android:layout_height="wrap_content">
+    </Button>
+
+    <Button
+        android:id="@+id/activity_login_botao_registrar"
+        android:layout_width="match_parent"
+        android:layout_margin="8dp"
+        android:text="REGISTRAR"
         android:layout_height="wrap_content">
     </Button>
 

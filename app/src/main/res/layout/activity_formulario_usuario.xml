@@ -19,6 +19,7 @@
         android:id="@+id/activity_formulario_usuario_genero"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_margin="8dp"
         android:orientation="horizontal">
 
         <RadioButton
@@ -88,9 +89,13 @@
 
     </EditText>
 
+    <Button
+        android:id="@+id/activity_formulario_usuario_botao_registrar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        android:text="Registrar">
 
-
-
-
+    </Button>
 
 </LinearLayout>

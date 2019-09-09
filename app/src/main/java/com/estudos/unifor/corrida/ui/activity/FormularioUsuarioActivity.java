@@ -9,6 +9,7 @@ import android.widget.RadioButton;
 import android.widget.TextView;
 
 import com.estudos.unifor.corrida.R;
+import com.estudos.unifor.corrida.dao.UsuarioDAO;
 import com.estudos.unifor.corrida.model.Usuario;
 
 public class FormularioUsuarioActivity extends AppCompatActivity {
@@ -19,6 +20,8 @@ public class FormularioUsuarioActivity extends AppCompatActivity {
         setContentView(R.layout.activity_formulario_usuario);
 
         setTitle("Inscrever-se");
+
+        final UsuarioDAO dao = new UsuarioDAO();
 
         final TextView campoNome = findViewById(R.id.activity_formulario_usuario_nome);
         final View campoFeminino = findViewById(R.id.activity_formulario_usuario_genero_feminino);
@@ -42,7 +45,10 @@ public class FormularioUsuarioActivity extends AppCompatActivity {
                String disciplina = campoDisciplina.getText().toString();
                String turma = campoTurma.getText().toString();
 
-               Usuario alunoCriado = new Usuario(nome, email, senha, telefone, disciplina, turma);
+               Usuario usuarioCriado = new Usuario(nome, email, senha, telefone, disciplina, turma);
+               dao.salva(usuarioCriado);
+
+               finish();
 
             }
         });

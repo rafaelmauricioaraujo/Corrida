@@ -1,44 +1,43 @@
 package com.estudos.unifor.corrida.model;
 
+import androidx.room.Entity;
+import androidx.room.Ignore;
+import androidx.room.PrimaryKey;
+
+@Entity
 public class Usuario {
-    private final String nome;
-    private final String email;
-    private final String senha;
-    private final String telefone;
-    private final String disciplina;
-    private final String turma;
 
-    public Usuario(String nome, String email, String senha, String telefone, String disciplina, String turma) {
+    @PrimaryKey(autoGenerate = true)
+    private int id = 0;
+    private String nome;
+    private String email;
+    private String senha;
 
+
+    @Ignore
+    public Usuario(String nome, String email, String senha) {
         this.nome = nome;
         this.email = email;
         this.senha = senha;
-        this.telefone = telefone;
-        this.disciplina = disciplina;
-        this.turma = turma;
     }
 
-    public String getNome() {
-        return nome;
+    public Usuario(){
     }
 
-    public String getEmail() {
-        return email;
-    }
+    public int getId(){ return id; }
 
-    public String getSenha() {
-        return senha;
-    }
+    public void setId(int id) { this.id = id; }
 
-    public String getTelefone() {
-        return telefone;
-    }
+    public String getNome() { return nome; }
 
-    public String getDisciplina() {
-        return disciplina;
-    }
+    public void setNome(String nome) { this.nome = nome; }
 
-    public String getTurma() {
-        return turma;
-    }
+    public String getEmail() { return email; }
+
+    public void setEmail(String email) { this.email = email; }
+
+    public String getSenha() { return senha; }
+
+    public void setSenha(String senha) { this.senha = senha; }
+
 }

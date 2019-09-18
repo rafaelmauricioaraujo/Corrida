@@ -45,7 +45,7 @@ public class FormularioUsuarioActivity extends AppCompatActivity {
                String disciplina = campoDisciplina.getText().toString();
                String turma = campoTurma.getText().toString();
 
-               Usuario usuarioCriado = new Usuario(nome, email, senha, telefone, disciplina, turma);
+               Usuario usuarioCriado = new Usuario(nome, email, senha);
                dao.salva(usuarioCriado);
 
                finish();

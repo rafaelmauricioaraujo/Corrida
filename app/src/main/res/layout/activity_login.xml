@@ -27,7 +27,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="8dp"
-        android:text="@string/login_btn"></Button>
+        android:text="@string/login_btn" />
 
     <Button
         android:id="@+id/activity_login_botao_registrar"
@@ -35,7 +35,6 @@
         android:layout_height="wrap_content"
         android:layout_margin="8dp"
         android:onClick="registrar"
-        android:text="@string/registrar_btn"></Button>
-
+        android:text="@string/registrar_btn" />
 
 </LinearLayout>

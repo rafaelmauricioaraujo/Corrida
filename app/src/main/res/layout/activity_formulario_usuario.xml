@@ -8,12 +8,13 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical">
+
         <EditText
             android:id="@+id/activity_formulario_usuario_nome"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="8dp"
-            android:text="Nome"
+            android:hint="@string/nome_form"
             android:inputType="textCapWords">
 
         </EditText>
@@ -47,7 +48,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="8dp"
-            android:text="Email"
+            android:hint="@string/email_form"
             android:inputType="textEmailAddress">
 
         </EditText>
@@ -57,7 +58,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="8dp"
-            android:text="Senha"
+            android:hint="@string/senha_form"
             android:inputType="textPassword">
 
         </EditText>
@@ -67,7 +68,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="8dp"
-            android:text="Telefone"
+            android:hint="@string/tel_form"
             android:inputType="phone">
 
         </EditText>
@@ -77,15 +78,17 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="8dp"
-            android:text="Disciplina"
+            android:hint="@string/discp_form"
             android:inputType="text">
 
-        </EditText>    <EditText
+        </EditText>
+
+        <EditText
             android:id="@+id/activity_formulario_usuario_turma"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="8dp"
-            android:text="Turma"
+            android:hint="@string/turma_form"
             android:inputType="text">
 
         </EditText>
@@ -95,7 +98,6 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="8dp"
-            android:text="Registrar">
-        </Button>
+            android:text="@string/registrar_btn"></Button>
     </LinearLayout>
 </ScrollView>

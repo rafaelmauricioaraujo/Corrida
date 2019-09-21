@@ -1,3 +1,13 @@
 <resources>
     <string name="app_name">Corrida</string>
+    <string name="email_login">Email</string>
+    <string name="senha_login">Senha</string>
+    <string name="nome_form">Nome</string>
+    <string name="email_form">Email</string>
+    <string name="senha_form">Senha</string>
+    <string name="tel_form">Telefone</string>
+    <string name="discp_form">Disciplina</string>
+    <string name="turma_form">Turma</string>
+    <string name="login_btn">LOG IN</string>
+    <string name="registrar_btn">REGISTRAR</string>
 </resources>

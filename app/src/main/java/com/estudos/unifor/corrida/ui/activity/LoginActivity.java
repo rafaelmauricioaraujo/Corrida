@@ -18,6 +18,8 @@ import java.util.List;
 
 public class LoginActivity extends AppCompatActivity {
     private RoomUsuarioDAO dao;
+    private String email;
+    private String senha;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,8 +39,8 @@ public class LoginActivity extends AppCompatActivity {
         TextView campoEmail = findViewById(R.id.activity_login_email);
         TextView campoSenha = findViewById(R.id.activity_login_senha);
 
-        String email = campoEmail.getText().toString();
-        String senha = campoSenha.getText().toString();
+        email = campoEmail.getText().toString();
+        senha = campoSenha.getText().toString();
 
         Intent intent = new Intent(this, BemVindoActivity.class);
 
@@ -53,10 +55,11 @@ public class LoginActivity extends AppCompatActivity {
         Usuario usuario = new Usuario();
         usuario = usuarios.get(0);
 
+
         if(usuario.getEmail() == email & usuario.getSenha() == senha){
             startActivity(intent);
         }else{
-            Toast.makeText(this, "Usuaraio ou senha não encontrados", Toast.LENGTH_LONG).show();
+            Toast.makeText(this, "Usuário: " + email + "ou senha não encontrados", Toast.LENGTH_LONG).show();
         }
     }
 }

@@ -10,4 +10,6 @@
     <string name="turma_form">Turma</string>
     <string name="login_btn">LOG IN</string>
     <string name="registrar_btn">REGISTRAR</string>
+    <string name="title_activity_bem_vindo">BemVindoActivity</string>
+    <string name="bem_vindo">Bem Vindo</string>
 </resources>

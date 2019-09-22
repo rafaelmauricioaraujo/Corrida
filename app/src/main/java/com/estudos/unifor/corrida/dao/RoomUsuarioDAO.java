@@ -6,6 +6,8 @@ import androidx.room.Query;
 
 import com.estudos.unifor.corrida.model.Usuario;
 
+import java.util.List;
+
 @Dao
 public interface RoomUsuarioDAO {
     
@@ -13,6 +15,6 @@ public interface RoomUsuarioDAO {
     void salva(Usuario usuario);
 
     @Query("SELECT * FROM USUARIO WHERE USUARIO.email = :email AND USUARIO.senha = :senha")
-    Usuario getUsuarioByNome(String email, String senha);
+    List<Usuario> getUsuarioByNome(String email, String senha);
 
 }

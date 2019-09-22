@@ -12,6 +12,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.estudos.unifor.corrida.R;
 import com.estudos.unifor.corrida.dao.RoomUsuarioDAO;
@@ -89,6 +90,7 @@ public class FormularioUsuarioActivity extends AppCompatActivity {
     private void finalizaFormulario(){
         preencheUsuario();
         dao.salva(usuario);
+        Toast.makeText(this, "usuario salvo", Toast.LENGTH_LONG).show();
         finish();
     }
 

@@ -14,6 +14,8 @@ import com.estudos.unifor.corrida.dao.RoomUsuarioDAO;
 import com.estudos.unifor.corrida.database.CorridaDatabase;
 import com.estudos.unifor.corrida.model.Usuario;
 
+import java.util.List;
+
 public class LoginActivity extends AppCompatActivity {
     private RoomUsuarioDAO dao;
 
@@ -38,7 +40,7 @@ public class LoginActivity extends AppCompatActivity {
         String email = campoEmail.getText().toString();
         String senha = campoSenha.getText().toString();
 
-        Intent intent = new Intent(this, LoginActivity.class);
+        Intent intent = new Intent(this, BemVindoActivity.class);
 
         CorridaDatabase database = Room
                 .databaseBuilder(this, CorridaDatabase.class, "corrida.db")
@@ -47,7 +49,9 @@ public class LoginActivity extends AppCompatActivity {
 
         dao = database.getRoomUsuarioDAO();
 
-        Usuario usuario = dao.getUsuarioByNome(email, senha);
+        List<Usuario> usuarios = dao.getUsuarioByNome(email, senha);
+        Usuario usuario = new Usuario();
+        usuario = usuarios.get(0);
 
         if(usuario.getEmail() == email & usuario.getSenha() == senha){
             startActivity(intent);

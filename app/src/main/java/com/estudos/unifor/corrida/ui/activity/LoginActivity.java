@@ -27,6 +27,13 @@ public class LoginActivity extends AppCompatActivity {
         setContentView(R.layout.activity_login);
 
         setTitle("Log in");
+
+        CorridaDatabase database = Room
+                .databaseBuilder(this, CorridaDatabase.class, "corrida.db")
+                .allowMainThreadQueries()
+                .build();
+
+        dao = database.getRoomUsuarioDAO();
     }
 
     public void registrar(View view){
@@ -44,17 +51,9 @@ public class LoginActivity extends AppCompatActivity {
 
         Intent intent = new Intent(this, BemVindoActivity.class);
 
-        CorridaDatabase database = Room
-                .databaseBuilder(this, CorridaDatabase.class, "corrida.db")
-                .allowMainThreadQueries()
-                .build();
-
-        dao = database.getRoomUsuarioDAO();
-
         List<Usuario> usuarios = dao.getUsuarioByNome(email, senha);
         Usuario usuario = new Usuario();
         usuario = usuarios.get(0);
-
 
         if(usuario.getEmail() == email & usuario.getSenha() == senha){
             startActivity(intent);

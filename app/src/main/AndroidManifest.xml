@@ -9,7 +9,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ui.activity.BemVindoActivity"></activity>
+        <activity android:name=".ui.activity.MapaActivity"
+                  android:parentActivityName=".ui.activity.LoginActivity"/>
+        <activity android:name=".ui.activity.BemVindoActivity"
+                  android:parentActivityName=".ui.activity.LoginActivity"/>
         <activity
             android:name=".ui.activity.FormularioUsuarioActivity"
             android:parentActivityName=".ui.activity.LoginActivity" />
@@ -20,6 +23,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <meta-data
+            android:name="com.google.android.geo.AIzaSyAAKVNnYgj2q9e5pxD29kui9wvUcrEScI4"
+            android:value="AIzaSyAAKVNnYgj2q9e5pxD29kui9wvUcrEScI4"/>
     </application>
 
 </manifest>

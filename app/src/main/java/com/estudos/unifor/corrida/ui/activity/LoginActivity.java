@@ -6,6 +6,7 @@ import androidx.room.Room;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -43,22 +44,23 @@ public class LoginActivity extends AppCompatActivity {
 
     public void login(View view){
 
-        TextView campoEmail = findViewById(R.id.activity_login_email);
-        TextView campoSenha = findViewById(R.id.activity_login_senha);
+        EditText campoEmail = (EditText) findViewById(R.id.activity_login_email);
+        EditText campoSenha = (EditText) findViewById(R.id.activity_login_senha);
 
         email = campoEmail.getText().toString();
         senha = campoSenha.getText().toString();
 
-        Intent intent = new Intent(this, BemVindoActivity.class);
+        Intent MapIntent = new Intent(this, MapaActivity.class);
+        Intent BemVindoIntent = new Intent(this, BemVindoActivity.class);
+        Intent LoginIntent = new Intent(this, LoginActivity.class);
 
         List<Usuario> usuarios = dao.getUsuarioByNome(email, senha);
-        Usuario usuario = new Usuario();
-        usuario = usuarios.get(0);
+        Usuario usuario = usuarios.get(0);
 
-        if(usuario.getEmail() == email & usuario.getSenha() == senha){
-            startActivity(intent);
+        if(usuario.getEmail().equals(email) & usuario.getSenha().equals(senha)){
+            startActivity(BemVindoIntent);
         }else{
-            Toast.makeText(this, "Usuário: " + email + "ou senha não encontrados", Toast.LENGTH_LONG).show();
+            startActivity(LoginIntent);
         }
     }
 }

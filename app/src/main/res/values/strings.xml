@@ -3,6 +3,8 @@
     <string name="email_login">Email</string>
     <string name="senha_login">Senha</string>
     <string name="nome_form">Nome</string>
+    <string name="masc_rd_btn">MASCULINO</string>
+    <string name="fem_rd_btn">FEMININO</string>
     <string name="email_form">Email</string>
     <string name="senha_form">Senha</string>
     <string name="tel_form">Telefone</string>

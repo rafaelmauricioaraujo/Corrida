@@ -14,7 +14,9 @@ public interface RoomUsuarioDAO {
     @Insert
     void salva(Usuario usuario);
 
-    @Query("SELECT * FROM USUARIO WHERE USUARIO.email = :email AND USUARIO.senha = :senha")
-    List<Usuario> getUsuarioByNome(String email, String senha);
+    @Query("SELECT * FROM USUARIO")
+    List<Usuario> getTodos();
+
+
 
 }

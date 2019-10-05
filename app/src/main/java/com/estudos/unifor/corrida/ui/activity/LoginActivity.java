@@ -7,6 +7,7 @@ import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -22,6 +23,8 @@ public class LoginActivity extends AppCompatActivity {
     private RoomUsuarioDAO dao;
     private String email;
     private String senha;
+    private Button btnLogin;
+    private Button btnRegistrar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,6 +39,17 @@ public class LoginActivity extends AppCompatActivity {
                 .build();
 
         dao = database.getRoomUsuarioDAO();
+
+        btnLogin = findViewById(R.id.activity_login_botao_entrar);
+        btnRegistrar = findViewById(R.id.activity_login_botao_registrar);
+
+        btnLogin.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+//                Toast.makeText(LoginActivity.this, "Clicou no login", Toast.LENGTH_LONG).show();
+                login(view);
+            }
+        });
     }
 
     public void registrar(View view){
@@ -51,17 +65,24 @@ public class LoginActivity extends AppCompatActivity {
         email = campoEmail.getText().toString();
         senha = campoSenha.getText().toString();
 
-        Intent MapIntent = new Intent(this, MapaActivity.class);
         Intent BemVindoIntent = new Intent(this, BemVindoActivity.class);
         Intent LoginIntent = new Intent(this, LoginActivity.class);
+        Intent maps = new Intent(this, MapsActivity.class);
 
-        List<Usuario> usuarios = dao.getUsuarioByNome(email, senha);
-        Usuario usuario = usuarios.get(0);
+        List<Usuario> usuarios = dao.getTodos();
 
-        if(usuario.getEmail().equals(email) & usuario.getSenha().equals(senha)){
-            startActivity(BemVindoIntent);
-        }else{
-            Toast.makeText(this, "email: " + email + " não encontrado", Toast.LENGTH_LONG).show();
+        for(int i = 0; i < usuarios.size(); i++){
+
+            Usuario usuario = usuarios.get(i);
+
+            if(usuario.getEmail().equals(email) & usuario.getSenha().equals(senha)){
+                startActivity(maps);
+            }else{
+                Toast.makeText(this, "usuario ou senha não encontrados ", Toast.LENGTH_LONG).show();
+                finish();
+            }
+
         }
+
     }
 }

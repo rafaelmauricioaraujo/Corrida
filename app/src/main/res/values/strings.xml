@@ -14,4 +14,5 @@
     <string name="registrar_btn">REGISTRAR</string>
     <string name="title_activity_bem_vindo">BemVindoActivity</string>
     <string name="bem_vindo">Bem Vindo</string>
+    <string name="title_activity_maps">Map</string>
 </resources>
